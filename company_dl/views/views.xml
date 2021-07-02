@@ -6,7 +6,7 @@
 			<field name="inherit_id" ref="base.view_company_form"/>
 			<field name="arch" type="xml">
 <field name="website" position="after">
-<field name="company_dl_one"/>
+<field name="company_dl_one" string = "Company DL number!!"/>
 <field name="company_dl_two"/>
 </field>
 </field>
