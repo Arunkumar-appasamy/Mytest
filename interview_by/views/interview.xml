@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="view_form_interview" model="ir.ui.view">
+    <field name="name">hr.interview.form</field>
+    <field name="model">hr.applicant</field>
+    <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name = 'description']" position="after">
+        <notebook>
+          <page string="Description">
+            <field name="description"/>
+        </page>
+          <page string="Interviewed By">
+            <field name="interviewer_lines">
+            <tree editable="bottom">
+                  <field name="date"/>
+                  <field name="user_id"/>
+                  <field name="comments"/>
+                  <field name="interview_id" invisible = "1"/>
+            </tree>
+          </field>
+        </page>
+      </notebook>
+    </xpath>
+  </field>
+</record>
+</odoo>
