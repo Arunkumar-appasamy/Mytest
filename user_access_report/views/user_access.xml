@@ -5,12 +5,12 @@
       <field name="model">user.access.view</field>
       <field name="arch" type="xml">
         <pivot string="User Access Report" disable_linking="True">
-          <field name="user_name"/>
+          <field name="user_name_id"/>
           <field name="login_id"/>
-          <field name="user_department"/>
-          <field name="work_address"/>
-          <field name="application_name"/>
-          <field name="access_name"/>
+          <field name="hr_department_id"/>
+          <field name="work_address_id"/>
+          <field name="category_id"/>
+          <field name="access_id"/>
         </pivot>
       </field>
     </record>
@@ -20,12 +20,12 @@
       <field name="model">user.access.view</field>
       <field name="arch" type="xml">
         <tree string="User Access Report">
-          <field name="user_name"/>
+          <field name="user_name_id"/>
           <field name="login_id"/>
-          <field name="user_department"/>
-          <field name="work_address"/>
-          <field name="application_name"/>
-          <field name="access_name"/>
+          <field name="hr_department_id"/>
+          <field name="work_address_id"/>
+          <field name="category_id"/>
+          <field name="access_id"/>
         </tree>
       </field>
     </record>
@@ -36,10 +36,10 @@
       <field name="model">user.access.view</field>
       <field name="arch" type="xml">
         <search string="Search user">
-          <field name="user_name" filter_domain="['|',('user_name', 'ilike', self), ('login_id', 'ilike', self)]"/>
-          <field name="access_name" filter_domain="[('access_name', 'ilike', self)]"/>
+          <field name="user_name_id" filter_domain="['|',('user_name_id', 'ilike', self), ('login_id', 'ilike', self)]"/>
+          <field name="access_id" filter_domain="[('access_id', 'ilike', self)]"/>
           <separator />
-          <filter string="Internal" name="application_name" domain="['&amp;', ('application_name', '!=', False), ('application_name', 'not ilike', 'Technical')]"/>
+          <filter string="Internal" name="category_id" domain="['&amp;', ('category_id', '!=', False), ('category_id', 'not ilike', 'Technical')]"/>
         </search>
       </field>
     </record>
@@ -50,7 +50,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">user.access.view</field>
         <field name="view_mode">tree,pivot</field>
-        <field name="context">{"search_default_application_name":1}</field>
+        <field name="context">{"search_default_category_id":1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
               No Data Availabe
@@ -60,4 +60,5 @@
 
 <!--Menu creation-->
     <menuitem id="user_access_view_id" name="User Access Report" parent="base.menu_users" sequence="2" action="action_user_access_report"/>
+
 </odoo>
