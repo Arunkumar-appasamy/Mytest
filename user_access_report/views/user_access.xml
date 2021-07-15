@@ -8,6 +8,7 @@
           <field name="user_name_id"/>
           <field name="login_id"/>
           <field name="hr_department_id"/>
+          <field name="hr_manager_id"/>
           <field name="work_address_id"/>
           <field name="category_id"/>
           <field name="access_id"/>
@@ -23,6 +24,7 @@
           <field name="user_name_id"/>
           <field name="login_id"/>
           <field name="hr_department_id"/>
+          <field name="hr_manager_id"/>
           <field name="work_address_id"/>
           <field name="category_id"/>
           <field name="access_id"/>
